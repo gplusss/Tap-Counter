@@ -15,12 +15,14 @@ class ViewController: UIViewController {
     
     
     @IBOutlet weak var countLabel: UILabel!
-    @IBOutlet weak var tapLabel: UIButton!
-    
+    @IBOutlet weak var tapLabel: UIButton!    
+    @IBOutlet weak var resetButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         title = "COUNTER"
+        resetButton.title = "Reset"
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -38,7 +40,12 @@ class ViewController: UIViewController {
         print(countLabel.text!)
     }
     
+    @IBAction func resetCounter(sender: UIBarButtonItem) {
+        count = 0
+        countLabel.text = String(count)
+        print("reset")
     
+    }
 
 
 }
